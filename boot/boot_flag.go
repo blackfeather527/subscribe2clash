@@ -12,11 +12,6 @@ import (
 )
 
 func init() {
-	flag.BoolVar(&global.GenerateConfig, "gc", false, "生成clash配置文件")
-	flag.StringVar(&global.BaseFile, "b", "", "clash基础配置文件")
-	flag.StringVar(&global.RulesFile, "r", "", "路由配置文件")
-	flag.StringVar(&global.OutputFile, "o", "", "clash配置文件名")
-	flag.StringVar(&global.Listen, "l", "0.0.0.0:8162", "监听地址")
 	flag.StringVar(&req.Proxy, "proxy", "", "http代理")
 	flag.BoolVar(&global.Version, "version", false, "查看版本信息")
 	flag.Parse()
