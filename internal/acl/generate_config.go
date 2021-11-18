@@ -11,8 +11,8 @@ import (
 	"text/template"
 	"unsafe"
 
-	"github.com/whoisix/subscribe2clash/internal/req"
-	"github.com/whoisix/subscribe2clash/internal/subscribe"
+	"github.com/blackfeather527/subscribe2clash/internal/req"
+	"github.com/blackfeather527/subscribe2clash/internal/subscribe"
 )
 
 //go:embed config/default_base_config.yaml
