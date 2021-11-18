@@ -2,10 +2,9 @@ package boot
 
 import (
 	"os"
-	"time"
 
-	"github.com/whoisix/subscribe2clash/internal/acl"
-	"github.com/whoisix/subscribe2clash/internal/global"
+	"github.com/blackfeather527/subscribe2clash/internal/acl"
+	"github.com/blackfeather527/subscribe2clash/internal/global"
 )
 
 func generateConfig() {
@@ -16,13 +15,4 @@ func generateConfig() {
 		acl.GenerateConfig(options...)
 		os.Exit(0)
 	}
-
-	go func() {
-		acl.GenerateConfig(options...)
-		ticker := time.NewTicker(time.Duration(global.Tick) * time.Hour)
-		for {
-			<-ticker.C
-			acl.GenerateConfig(options...)
-		}
-	}()
 }
