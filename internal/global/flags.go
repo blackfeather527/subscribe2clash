@@ -6,6 +6,5 @@ var (
 	RulesFile      string
 	OutputFile     string
 	Listen         string
-	Tick           int
 	Version        bool
 )
