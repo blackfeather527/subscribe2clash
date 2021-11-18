@@ -1,4 +1,4 @@
-module github.com/whoisix/subscribe2clash
+module github.com/blackfeather527/subscribe2clash
 
 go 1.16
 
