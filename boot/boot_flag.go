@@ -12,6 +12,7 @@ import (
 )
 
 func init() {
+	flag.StringVar(&global.Listen, "l", "0.0.0.0:8162", "监听地址")
 	flag.StringVar(&req.Proxy, "proxy", "", "http代理")
 	flag.BoolVar(&global.Version, "version", false, "查看版本信息")
 	flag.Parse()
