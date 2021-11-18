@@ -7,7 +7,7 @@ import (
 
 	"gopkg.in/ini.v1"
 
-	"github.com/whoisix/subscribe2clash/internal/global"
+	"github.com/blackfeather527/subscribe2clash/internal/global"
 )
 
 //go:embed config/default_rules.ini
