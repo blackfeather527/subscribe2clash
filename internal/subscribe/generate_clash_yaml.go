@@ -14,7 +14,8 @@ var (
 )
 
 func (c *Clash) LoadTemplate(path string, proxies []interface{}) []byte {
-	var buf := "proxies: ~\n"
+	var buf []byte
+	buf = []byte("proxies: ~\n")
 	var err = yaml.Unmarshal(buf, &c)
 	if err != nil {
 		log.Printf("[%s] Template format error.", path)
