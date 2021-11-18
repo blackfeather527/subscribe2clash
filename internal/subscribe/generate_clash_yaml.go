@@ -23,7 +23,6 @@ func (c *Clash) LoadTemplate(path string, proxies []interface{}) []byte {
 	c.Proxy = nil
 
 	var proxy []map[string]interface{}
-	var proxiesStr []string
 	names := map[string]int{}
 
 	for _, proto := range proxies {
@@ -44,7 +43,6 @@ func (c *Clash) LoadTemplate(path string, proxies []interface{}) []byte {
 		proxyItem["name"] = name
 		proxy = append(proxy, proxyItem)
 		c.Proxy = append(c.Proxy, proxyItem)
-		proxiesStr = append(proxiesStr, name)
 	}
 
 	c.Proxy = proxy
