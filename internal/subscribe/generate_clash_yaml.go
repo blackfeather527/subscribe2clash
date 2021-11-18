@@ -16,16 +16,7 @@ var (
 )
 
 func (c *Clash) LoadTemplate(path string, proxies []interface{}) []byte {
-	_, err := os.Stat(path)
-	if err != nil && os.IsNotExist(err) {
-		log.Printf("[%s] template doesn't exist.", path)
-		return nil
-	}
-	buf, err := ioutil.ReadFile(path)
-	if err != nil {
-		log.Printf("[%s] template open the failure.", path)
-		return nil
-	}
+        buf = "proxies: ~\n"
 	err = yaml.Unmarshal(buf, &c)
 	if err != nil {
 		log.Printf("[%s] Template format error.", path)
@@ -59,23 +50,6 @@ func (c *Clash) LoadTemplate(path string, proxies []interface{}) []byte {
 	}
 
 	c.Proxy = proxy
-
-	for _, group := range c.ProxyGroup {
-		groupProxies := group["proxies"].([]interface{})
-		for i, p := range groupProxies {
-			if p == "1" {
-				groupProxies = groupProxies[:i]
-				var tmpGroupProxies []string
-				for _, s := range groupProxies {
-					tmpGroupProxies = append(tmpGroupProxies, s.(string))
-				}
-				tmpGroupProxies = append(tmpGroupProxies, proxiesStr...)
-				group["proxies"] = tmpGroupProxies
-				break
-			}
-		}
-
-	}
 
 	d, err := yaml.Marshal(c)
 	if err != nil {
