@@ -34,7 +34,9 @@ jobs:
         env:
           NAME: clash
           BINDIR: bin
-        run: make -j releases
+        run: |
+          echo "::set-output name=status::success"
+          make -j releases
 
       - name: Upload Release
         uses: softprops/action-gh-release@v1
