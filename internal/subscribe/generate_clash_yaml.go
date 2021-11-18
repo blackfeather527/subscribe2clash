@@ -3,9 +3,7 @@ package subscribe
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"log"
-	"os"
 	"reflect"
 
 	"gopkg.in/yaml.v2"
@@ -16,7 +14,7 @@ var (
 )
 
 func (c *Clash) LoadTemplate(path string, proxies []interface{}) []byte {
-        var buf = "proxies: ~\n"
+	var buf := "proxies: ~\n"
 	var err = yaml.Unmarshal(buf, &c)
 	if err != nil {
 		log.Printf("[%s] Template format error.", path)
