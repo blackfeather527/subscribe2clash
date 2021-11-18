@@ -8,7 +8,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/whoisix/subscribe2clash/internal/xbase64"
+	"github.com/blackfeather527/subscribe2clash/internal/xbase64"
 )
 
 var (
