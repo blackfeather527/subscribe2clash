@@ -6,9 +6,9 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/whoisix/subscribe2clash/constant"
-	"github.com/whoisix/subscribe2clash/internal/global"
-	"github.com/whoisix/subscribe2clash/internal/req"
+	"github.com/blackfeather527/subscribe2clash/constant"
+	"github.com/blackfeather527/subscribe2clash/internal/global"
+	"github.com/blackfeather527/subscribe2clash/internal/req"
 )
 
 func init() {
@@ -18,7 +18,6 @@ func init() {
 	flag.StringVar(&global.OutputFile, "o", "", "clash配置文件名")
 	flag.StringVar(&global.Listen, "l", "0.0.0.0:8162", "监听地址")
 	flag.StringVar(&req.Proxy, "proxy", "", "http代理")
-	flag.IntVar(&global.Tick, "t", 6, "规则更新频率（小时）")
 	flag.BoolVar(&global.Version, "version", false, "查看版本信息")
 	flag.Parse()
 }
